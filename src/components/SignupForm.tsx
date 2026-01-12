@@ -2,194 +2,178 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2 } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Check, Send, Shield } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedSection from "./AnimatedSection";
 
 const SignupForm = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     whatsapp: "",
     website: "",
-    selling: "",
+    service: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setSubmitted(true);
   };
 
   return (
-    <section id="signup-form" className="py-24 px-4 bg-secondary/30">
-      <div className="container max-w-lg">
-        <AnimatePresence mode="wait">
-          {isSubmitted ? (
-            <motion.div
-              key="success"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4, type: "spring" }}
-              className="bg-card rounded-3xl p-8 sm:p-12 shadow-card border border-border/50 text-center"
-            >
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
-              >
-                <CheckCircle2 className="w-10 h-10 text-primary" />
-              </motion.div>
-              <motion.h2
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-2xl font-bold mb-3"
-              >
-                Nice 😄
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-muted-foreground text-lg"
-              >
-                Buddy will reach out on WhatsApp.
-              </motion.p>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="form"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="text-center mb-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                  Let's get started
-                </h2>
-                <p className="text-muted-foreground text-lg">
-                  Fill in the details and Buddy will reach out.
-                </p>
-              </div>
-
-              <motion.form
-                onSubmit={handleSubmit}
-                className="bg-card rounded-3xl p-8 sm:p-10 shadow-card border border-border/50 space-y-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
+    <section id="signup-form" className="py-20 px-4">
+      <div className="container max-w-xl">
+        <AnimatedSection>
+          <motion.div
+            layout
+            className="bg-card rounded-3xl p-8 sm:p-10 shadow-card border border-border/50"
+          >
+            <AnimatePresence mode="wait">
+              {!submitted ? (
                 <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
+                  key="form"
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <label
-                    htmlFor="whatsapp"
-                    className="text-sm font-medium text-foreground"
+                  <div className="text-center mb-8">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
+                      className="w-14 h-14 rounded-2xl gradient-hero flex items-center justify-center mx-auto mb-6"
+                    >
+                      <Send className="w-6 h-6 text-primary-foreground" />
+                    </motion.div>
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+                      Let's get started
+                    </h2>
+                    <p className="text-muted-foreground">
+                      We'll send real matched leads directly to your WhatsApp.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 }}
+                      className="space-y-2"
+                    >
+                      <Label htmlFor="whatsapp">WhatsApp Number *</Label>
+                      <Input
+                        id="whatsapp"
+                        type="tel"
+                        placeholder="+1 234 567 8900"
+                        required
+                        value={formData.whatsapp}
+                        onChange={(e) =>
+                          setFormData({ ...formData, whatsapp: e.target.value })
+                        }
+                        className="h-12"
+                      />
+                      <p className="text-xs text-muted-foreground flex items-center gap-1.5">
+                        <Shield className="w-3 h-3" />
+                        Only matched leads. No calls. No spam.
+                      </p>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 }}
+                      className="space-y-2"
+                    >
+                      <Label htmlFor="website">Business Website (optional)</Label>
+                      <Input
+                        id="website"
+                        type="url"
+                        placeholder="https://yoursite.com"
+                        value={formData.website}
+                        onChange={(e) =>
+                          setFormData({ ...formData, website: e.target.value })
+                        }
+                        className="h-12"
+                      />
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 }}
+                      className="space-y-2"
+                    >
+                      <Label htmlFor="service">What do you sell? *</Label>
+                      <Textarea
+                        id="service"
+                        placeholder="E.g., Google Ads for local gyms"
+                        required
+                        value={formData.service}
+                        onChange={(e) =>
+                          setFormData({ ...formData, service: e.target.value })
+                        }
+                        className="min-h-[100px] resize-none"
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        Describe your offer in one sentence. Example: Google Ads for local gyms.
+                      </p>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <Button
+                        type="submit"
+                        variant="hero"
+                        size="lg"
+                        className="w-full h-14 text-base"
+                      >
+                        Get my free leads
+                      </Button>
+                    </motion.div>
+                  </form>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  className="text-center py-8"
+                >
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
+                    className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
                   >
-                    WhatsApp Number <span className="text-accent">*</span>
-                  </label>
-                  <Input
-                    id="whatsapp"
-                    name="whatsapp"
-                    type="tel"
-                    placeholder="+1 234 567 8900"
-                    value={formData.whatsapp}
-                    onChange={handleChange}
-                    required
-                    className="h-12 rounded-xl border-border/50 focus:border-primary transition-colors"
-                  />
-                </motion.div>
-
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <label
-                    htmlFor="website"
-                    className="text-sm font-medium text-foreground"
+                    <Check className="w-10 h-10 text-primary" />
+                  </motion.div>
+                  
+                  <motion.h3
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-2xl font-bold mb-3"
                   >
-                    Business Website{" "}
-                    <span className="text-muted-foreground font-normal">
-                      (optional)
-                    </span>
-                  </label>
-                  <Input
-                    id="website"
-                    name="website"
-                    type="url"
-                    placeholder="https://yourbusiness.com"
-                    value={formData.website}
-                    onChange={handleChange}
-                    className="h-12 rounded-xl border-border/50 focus:border-primary transition-colors"
-                  />
-                </motion.div>
-
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <label
-                    htmlFor="selling"
-                    className="text-sm font-medium text-foreground"
+                    Nice 😄
+                  </motion.h3>
+                  
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-muted-foreground text-lg"
                   >
-                    What do you sell? <span className="text-accent">*</span>
-                  </label>
-                  <Textarea
-                    id="selling"
-                    name="selling"
-                    placeholder="e.g., Web design services, marketing consultancy, SaaS tools..."
-                    value={formData.selling}
-                    onChange={handleChange}
-                    required
-                    className="min-h-[100px] rounded-xl border-border/50 focus:border-primary resize-none transition-colors"
-                  />
+                    Buddy will reach out on WhatsApp.
+                  </motion.p>
                 </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Get my free leads
-                  </Button>
-                </motion.div>
-
-                <motion.p
-                  className="text-center text-sm text-muted-foreground"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 }}
-                >
-                  No spam. Buddy respects your time.
-                </motion.p>
-              </motion.form>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   );

@@ -1,7 +1,12 @@
 import { Shield, Sparkles, Heart } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const FreeFirst = () => {
+  const scrollToForm = () => {
+    document.getElementById("signup-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="py-24 px-4">
       <div className="container max-w-4xl">
@@ -29,25 +34,46 @@ const FreeFirst = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-2xl sm:text-3xl font-bold mb-6 max-w-xl mx-auto leading-snug"
           >
-            I don't ask you to trust me first. I'll send you real leads — you decide if they're good.
+            I don't ask you to trust me first. I send you real leads. You decide if they're good.
           </motion.h2>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <Button variant="hero" size="lg" onClick={scrollToForm} className="mb-6">
+              Get my first leads free
+            </Button>
+          </motion.div>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-muted-foreground"
+          >
+            Start free • Cancel anytime • No pressure
+          </motion.p>
           
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-6 text-muted-foreground"
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-wrap items-center justify-center gap-6 mt-8 pt-8 border-t border-border/50"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-muted-foreground">
               <Sparkles className="w-5 h-5 text-primary" />
-              <span>Start free</span>
+              <span>Free to start</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-muted-foreground">
               <Heart className="w-5 h-5 text-primary" />
               <span>Cancel anytime</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-muted-foreground">
               <Shield className="w-5 h-5 text-primary" />
               <span>No pressure</span>
             </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import buddyLogo from "@/assets/buddy-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,9 +48,14 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-foreground hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2.5 text-foreground"
           >
-            <span className="text-xl font-semibold tracking-tight">Buddy</span>
+            <img 
+              src={buddyLogo} 
+              alt="Buddy" 
+              className="h-7 w-auto"
+            />
+            <span className="text-lg font-medium tracking-tight">Buddy</span>
           </button>
 
           {/* Desktop Navigation */}

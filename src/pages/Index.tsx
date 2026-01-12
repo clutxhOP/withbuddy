@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import SignupForm from "@/components/SignupForm";
 import Storyboard from "@/components/Storyboard";
@@ -9,6 +10,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <Navigation />
       <Hero />
       <SignupForm />
       <Storyboard />

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import buddyLogo from "@/assets/buddy-logo.png";
@@ -6,6 +7,8 @@ import buddyLogo from "@/assets/buddy-logo.png";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,21 +20,41 @@ const Navigation = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setIsMobileMenuOpen(false);
-  };
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
 
+  const handleNavClick = (link: { label: string; path?: string; id?: string }) => {
+    setIsMobileMenuOpen(false);
+    
+    if (link.path) {
+      navigate(link.path);
+    } else if (link.id) {
+      if (location.pathname !== "/") {
+        navigate(`/#${link.id}`);
+      } else {
+        const element = document.getElementById(link.id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  };
+
+  const isActive = (link: { path?: string; id?: string }) => {
+    if (link.path) {
+      return location.pathname === link.path;
+    }
+    return false;
+  };
+
   const navLinks = [
     { label: "Insights", id: "storyboard" },
-    { label: "FAQs", id: "faqs" },
+    { label: "FAQs", path: "/faqs" },
     { label: "About", id: "about" },
   ];
 
@@ -62,9 +85,13 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                key={link.label}
+                onClick={() => handleNavClick(link)}
+                className={`text-sm font-medium transition-colors ${
+                  isActive(link)
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
               </button>
@@ -95,9 +122,13 @@ const Navigation = () => {
             <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-left py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  key={link.label}
+                  onClick={() => handleNavClick(link)}
+                  className={`text-left py-3 text-base font-medium transition-colors ${
+                    isActive(link)
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {link.label}
                 </button>

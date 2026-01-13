@@ -53,7 +53,7 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { label: "Insights", id: "storyboard" },
+    { label: "Insights", path: "/insights" },
     { label: "FAQs", path: "/faqs" },
     { label: "About", path: "/about" },
   ];

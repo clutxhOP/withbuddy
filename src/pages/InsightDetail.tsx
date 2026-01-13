@@ -88,9 +88,8 @@ const InsightDetail = () => {
       const headingText = block.replace("## ", "");
       return (
         <div className="mt-16 md:mt-20 mb-8 md:mb-10">
-          <div className="flex items-center gap-4 mb-4">
-            <span className="w-8 h-px bg-primary/40" />
-            <span className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Section</span>
+          <div className="mb-5">
+            <span className="block w-16 h-px bg-primary/40" />
           </div>
           <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-medium text-foreground leading-tight">
             {headingText}

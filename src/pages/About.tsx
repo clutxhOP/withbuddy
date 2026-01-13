@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import faheemPhoto from "@/assets/faheem-founder.jpg";
+import aboutGraphic from "@/assets/about-graphic.png";
 
 const About = () => {
   return (
@@ -20,7 +21,7 @@ const About = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground tracking-tight">
               About Buddy
             </h1>
-            <p className="mt-6 text-base md:text-lg text-muted-foreground/70 font-light tracking-wide">
+            <p className="mt-6 text-base md:text-lg text-muted-foreground font-light tracking-wide">
               Why Buddy exists and how it thinks about lead generation.
             </p>
           </motion.div>
@@ -47,7 +48,7 @@ const About = () => {
                 <p>most businesses never see.</p>
               </div>
               
-              <div className="mt-10 space-y-3 text-lg md:text-xl text-foreground/80">
+              <div className="mt-10 space-y-3 text-lg md:text-xl text-foreground">
                 <p>People ask for recommendations.</p>
                 <p>They describe problems.</p>
                 <p>They look for help in public.</p>
@@ -83,7 +84,7 @@ const About = () => {
             className="grid md:grid-cols-2 gap-12 md:gap-16 items-center"
           >
             <div className="space-y-8">
-              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
+              <p className="text-lg md:text-xl text-foreground leading-relaxed">
                 Buddy is an AI super networker that scans public online discussions in real time and identifies high-intent opportunities for businesses.
               </p>
               
@@ -92,109 +93,23 @@ const About = () => {
               </p>
               
               <div className="pt-2 space-y-3">
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg text-foreground">
                   Buddy does not sell, message, or spam.
                 </p>
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg text-foreground">
                   It simply points you to the right moment<br className="hidden md:block" />
                   so you can step in naturally.
                 </p>
               </div>
             </div>
             
-            {/* Abstract listening graphic - network of connected nodes */}
-            <div className="hidden md:flex items-center justify-center">
-              <div className="relative w-72 h-72">
-                {/* Central listening pulse */}
-                <motion.div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary/10"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-primary/10"
-                  animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.3, 0.2] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                />
-                <motion.div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 rounded-full border border-primary/5"
-                  animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                />
-                
-                {/* Floating connection nodes */}
-                {[
-                  { x: '20%', y: '25%', delay: 0 },
-                  { x: '75%', y: '20%', delay: 0.3 },
-                  { x: '85%', y: '55%', delay: 0.6 },
-                  { x: '70%', y: '80%', delay: 0.9 },
-                  { x: '25%', y: '75%', delay: 1.2 },
-                  { x: '10%', y: '45%', delay: 1.5 },
-                ].map((node, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-2 h-2 rounded-full bg-primary/20"
-                    style={{ left: node.x, top: node.y }}
-                    animate={{ 
-                      opacity: [0.2, 0.5, 0.2],
-                      scale: [1, 1.3, 1]
-                    }}
-                    transition={{ 
-                      duration: 2.5, 
-                      repeat: Infinity, 
-                      ease: "easeInOut",
-                      delay: node.delay 
-                    }}
-                  />
-                ))}
-                
-                {/* Subtle connecting lines */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 288 288">
-                  <motion.path
-                    d="M58 72 L144 144 L216 58"
-                    stroke="hsl(var(--primary))"
-                    strokeWidth="0.5"
-                    fill="none"
-                    strokeOpacity="0.1"
-                    animate={{ strokeOpacity: [0.05, 0.15, 0.05] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                  <motion.path
-                    d="M245 158 L144 144 L202 230"
-                    stroke="hsl(var(--primary))"
-                    strokeWidth="0.5"
-                    fill="none"
-                    strokeOpacity="0.1"
-                    animate={{ strokeOpacity: [0.05, 0.15, 0.05] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  />
-                  <motion.path
-                    d="M72 216 L144 144 L29 130"
-                    stroke="hsl(var(--primary))"
-                    strokeWidth="0.5"
-                    fill="none"
-                    strokeOpacity="0.1"
-                    animate={{ strokeOpacity: [0.05, 0.15, 0.05] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  />
-                </svg>
-              </div>
-            </div>
-            
-            {/* Mobile graphic - simplified */}
-            <div className="flex md:hidden items-center justify-center py-4">
-              <div className="relative w-48 h-24">
-                <motion.div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary/10"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full border border-primary/10"
-                  animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.3, 0.2] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                />
-              </div>
+            {/* Listening graphic */}
+            <div className="flex items-center justify-center">
+              <img 
+                src={aboutGraphic} 
+                alt="Network connections representing Buddy's listening capabilities"
+                className="w-full max-w-sm md:max-w-md"
+              />
             </div>
           </motion.div>
         </div>
@@ -226,7 +141,7 @@ const About = () => {
               
               {/* Content - Story Format */}
               <div className="md:col-span-7 space-y-6 md:pt-2">
-                <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
                   Buddy was founded by Faheem Mashoor, a builder focused on practical AI systems that solve real business problems.
                 </p>
                 
@@ -260,9 +175,9 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-center space-y-4"
           >
-            <p className="text-2xl md:text-3xl text-foreground/90 font-light">Less noise.</p>
-            <p className="text-2xl md:text-3xl text-foreground/90 font-light">More relevance.</p>
-            <p className="text-2xl md:text-3xl text-foreground/90 font-light">Better conversations.</p>
+            <p className="text-2xl md:text-3xl text-foreground font-light">Less noise.</p>
+            <p className="text-2xl md:text-3xl text-foreground font-light">More relevance.</p>
+            <p className="text-2xl md:text-3xl text-foreground font-light">Better conversations.</p>
           </motion.div>
         </div>
       </section>

@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[85vh] flex items-center justify-center px-4 py-12">
+    <section className="min-h-[85vh] flex items-center justify-center px-4 pt-28 pb-16 bg-gradient-to-b from-primary/[0.02] via-transparent to-transparent">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}

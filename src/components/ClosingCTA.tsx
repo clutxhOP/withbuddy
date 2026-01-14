@@ -7,7 +7,7 @@ const ClosingCTA = () => {
   };
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-24 px-4 bg-gradient-to-t from-primary/[0.03] via-transparent to-transparent">
       <div className="container max-w-2xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

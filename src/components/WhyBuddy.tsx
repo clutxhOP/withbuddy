@@ -27,9 +27,9 @@ const benefits = [
 
 const WhyBuddy = () => {
   return (
-    <section className="py-24 px-4 bg-secondary/30">
+    <section className="py-16 px-4 bg-secondary/30">
       <div className="container max-w-5xl">
-        <AnimatedSection className="text-center mb-16">
+        <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Why Buddy?
           </h2>

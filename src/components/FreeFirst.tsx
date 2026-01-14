@@ -8,7 +8,7 @@ const FreeFirst = () => {
   };
 
   return (
-    <section className="py-24 px-4">
+    <section className="py-16 px-4">
       <div className="container max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

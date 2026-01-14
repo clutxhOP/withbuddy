@@ -21,7 +21,7 @@ const SignupForm = () => {
   };
 
   return (
-    <section id="signup-form" className="py-20 px-4">
+    <section id="signup-form" className="py-14 px-4">
       <div className="container max-w-xl">
         <AnimatedSection>
           <motion.div

@@ -44,9 +44,9 @@ const cardVariants = {
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 px-4">
+    <section className="py-16 px-4">
       <div className="container max-w-5xl">
-        <AnimatedSection className="text-center mb-16">
+        <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">How Buddy works</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             From conversation to conversion in three simple steps.

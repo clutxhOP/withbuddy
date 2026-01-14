@@ -9,7 +9,7 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-16 px-4 bg-muted/30">
+    <section id="pricing" className="py-20 px-4 bg-gradient-to-b from-muted/20 via-muted/30 to-muted/20">
       <div className="container max-w-4xl">
         <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>

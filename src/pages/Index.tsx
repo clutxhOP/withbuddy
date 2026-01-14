@@ -3,12 +3,10 @@ import Hero from "@/components/Hero";
 import SignupForm from "@/components/SignupForm";
 import Storyboard from "@/components/Storyboard";
 import HowItWorks from "@/components/HowItWorks";
-import WhoItsFor from "@/components/WhoItsFor";
 import WhatYouReceive from "@/components/WhatYouReceive";
 import WhyBuddy from "@/components/WhyBuddy";
+import QualificationSection from "@/components/QualificationSection";
 import Pricing from "@/components/Pricing";
-import TrustPrinciples from "@/components/TrustPrinciples";
-import InsightPreview from "@/components/InsightPreview";
 import ClosingCTA from "@/components/ClosingCTA";
 import Footer from "@/components/Footer";
 
@@ -20,12 +18,10 @@ const Index = () => {
       <SignupForm />
       <Storyboard />
       <HowItWorks />
-      <WhoItsFor />
       <WhatYouReceive />
       <WhyBuddy />
+      <QualificationSection />
       <Pricing />
-      <TrustPrinciples />
-      <InsightPreview />
       <ClosingCTA />
       <Footer />
     </main>

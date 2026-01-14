@@ -4,6 +4,7 @@ import SignupForm from "@/components/SignupForm";
 import Storyboard from "@/components/Storyboard";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBuddy from "@/components/WhyBuddy";
+import Pricing from "@/components/Pricing";
 import FreeFirst from "@/components/FreeFirst";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <Storyboard />
       <HowItWorks />
       <WhyBuddy />
+      <Pricing />
       <FreeFirst />
       <Footer />
     </main>

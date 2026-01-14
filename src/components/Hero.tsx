@@ -62,9 +62,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="text-sm text-muted-foreground/80 max-w-md mx-auto lg:mx-0 mb-8"
+              className="text-base sm:text-lg text-foreground/90 max-w-lg mx-auto lg:mx-0 mb-8 font-medium"
             >
-              Buddy is an AI super networker that scans public online conversations and surfaces high-intent opportunities in real time.
+              <span className="text-primary">Buddy is an AI super networker</span> that scans public online conversations and surfaces high-intent opportunities in real time.
             </motion.p>
             
             <motion.div

@@ -2,33 +2,47 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import faheemPhoto from "@/assets/faheem-founder.jpg";
+import ListeningVisual from "@/components/ListeningVisual";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Section 1: Hero - Strong Open */}
+      {/* Section 1: Split Hero - Strong Open */}
       <section className="pt-20 pb-12 md:pt-24 md:pb-16 lg:pt-28 lg:pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="max-w-2xl"
-          >
-            <p className="text-xs tracking-[0.25em] uppercase text-primary font-medium mb-4">
-              About Buddy
-            </p>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left: Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="max-w-xl"
+            >
+              <p className="text-xs tracking-[0.25em] uppercase text-primary font-medium mb-4">
+                About Buddy
+              </p>
+              
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-foreground leading-[1.1] tracking-tight mb-6">
+                Built to listen where intent actually happens
+              </h1>
+              
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-md">
+                Buddy is an AI super networker that scans public online conversations and surfaces high-intent opportunities in real time.
+              </p>
+            </motion.div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-foreground leading-[1.1] tracking-tight mb-6">
-              Built to listen where intent actually happens
-            </h1>
-            
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Buddy is an AI super networker that scans public online conversations and surfaces high-intent opportunities in real time.
-            </p>
-          </motion.div>
+            {/* Right: Listening Visual - Symbolic anchor */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              className="flex justify-center lg:justify-end"
+            >
+              <ListeningVisual />
+            </motion.div>
+          </div>
         </div>
       </section>
 

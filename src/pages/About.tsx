@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import faheemPhoto from "@/assets/faheem-founder.jpg";
-import aboutGraphic from "@/assets/about-graphic.png";
+import ListeningVisual from "@/components/ListeningVisual";
 
 const About = () => {
   return (
@@ -33,18 +33,14 @@ const About = () => {
               </p>
             </motion.div>
             
-            {/* Right: Abstract Visual */}
+            {/* Right: Listening Visual - Symbolic anchor */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               className="flex justify-center lg:justify-end"
             >
-              <img 
-                src={aboutGraphic} 
-                alt="Network connections representing Buddy's listening capabilities"
-                className="w-full max-w-sm md:max-w-md lg:max-w-lg opacity-95"
-              />
+              <ListeningVisual />
             </motion.div>
           </div>
         </div>

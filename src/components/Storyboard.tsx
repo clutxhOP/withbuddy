@@ -157,10 +157,10 @@ const Storyboard = () => {
             <span className="text-sm font-medium">Delivered to WhatsApp</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            See what Buddy finds
+            See the connections Buddy makes
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Real people actively asking for help — delivered straight to your WhatsApp.
+            Real people asking for help — brought straight to your WhatsApp.
           </p>
         </AnimatedSection>
 
@@ -168,10 +168,10 @@ const Storyboard = () => {
         <div className="mb-8">
           <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-4">
             <p className="text-sm font-medium text-muted-foreground text-center md:text-left">
-              Where Buddy finds the post
+              Where Buddy spots the opportunity
             </p>
             <p className="text-sm font-medium text-whatsapp text-center md:text-left">
-              What lands in your WhatsApp
+              What arrives in your WhatsApp
             </p>
           </div>
         </div>
@@ -191,7 +191,7 @@ const Storyboard = () => {
         <AnimatedSection delay={0.4} className="text-center mt-10">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-whatsapp rounded-full animate-pulse-soft" />
-            Buddy is listening for new leads right now...
+            Buddy is listening for new opportunities right now...
           </p>
         </AnimatedSection>
       </div>

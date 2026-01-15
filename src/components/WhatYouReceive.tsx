@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const items = [
-  "A real public conversation",
-  "Context on what the person is asking for",
-  "Where it came from",
-  "Why it's relevant to you",
+  "A real conversation happening right now",
+  "Context on what the person needs",
+  "Where the request came from",
+  "Why it's a match for you",
 ];
 
 const WhatYouReceive = () => {
@@ -14,10 +14,10 @@ const WhatYouReceive = () => {
       <div className="container max-w-3xl">
         <AnimatedSection className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-            What Buddy sends you
+            What Buddy brings you
           </h2>
           <p className="text-muted-foreground">
-            When Buddy finds a match, here's what shows up in your WhatsApp:
+            When Buddy spots a match, here's what lands in your WhatsApp:
           </p>
         </AnimatedSection>
         

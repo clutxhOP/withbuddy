@@ -4,24 +4,24 @@ import AnimatedSection from "./AnimatedSection";
 
 const benefits = [
   {
-    title: "Real buying intent",
-    description: "People actively searching for solutions, not passive scrollers.",
+    title: "Real requests, real people",
+    description: "People actively asking for help — not passive scrollers.",
   },
   {
-    title: "No ads or CPMs",
-    description: "Zero ad spend. Pay nothing until you see results.",
+    title: "No ads or interruptions",
+    description: "Zero ad spend. Connect naturally without cold outreach.",
   },
   {
-    title: "No scraping spam",
-    description: "Quality leads, not random email lists or bot traffic.",
+    title: "No spam or scraping",
+    description: "Quality conversations, not random email lists or bot traffic.",
   },
   {
-    title: "Context with every lead",
-    description: "Know exactly what they're looking for before you respond.",
+    title: "Context with every opportunity",
+    description: "Know exactly what they need before you step in.",
   },
   {
-    title: "Works 24/7 while you sleep",
-    description: "Always monitoring. Wake up to fresh leads in your inbox.",
+    title: "Always listening",
+    description: "Works 24/7. Wake up to fresh opportunities in your WhatsApp.",
   },
 ];
 
@@ -34,7 +34,7 @@ const WhyBuddy = () => {
             Why Buddy?
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Traditional lead gen is broken. Buddy fixes it.
+            Networking at scale — without the noise.
           </p>
         </AnimatedSection>
         

@@ -126,7 +126,7 @@ const SignupForm = () => {
                     >
                       <Button
                         type="submit"
-                        variant="hero"
+                        variant="whatsapp"
                         size="lg"
                         className="w-full h-14 text-base"
                       >

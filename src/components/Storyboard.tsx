@@ -9,18 +9,21 @@ const exampleLeads = [
     source: "Reddit",
     title: "Looking for a web designer for my restaurant",
     preview: "We desperately need a new website. Our current one looks like it's from 2005. Budget is around $2-3k.",
+    url: "https://www.reddit.com/r/smallbusiness/",
   },
   {
     timeAgo: "45 min ago",
     source: "Facebook Group",
     title: "Need help with Facebook ads - willing to pay",
     preview: "I've been trying to run FB ads for my e-commerce store but I'm just burning money. Looking for someone who knows what they're doing.",
+    url: "https://www.facebook.com/groups/",
   },
   {
     timeAgo: "1 hour ago",
     source: "LinkedIn",
     title: "Seeking a bookkeeper for my SaaS startup",
     preview: "We just raised our seed round and need to get our finances in order. Looking for a bookkeeper who understands startups.",
+    url: "https://www.linkedin.com/feed/",
   },
 ];
 
@@ -135,7 +138,7 @@ const LeadRow = ({ lead, index }: { lead: typeof exampleLeads[0]; index: number 
           </p>
           
           {/* View post link */}
-          <a href="#" className="inline-flex items-center gap-1.5 text-sm text-whatsapp hover:underline font-medium">
+          <a href={lead.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-whatsapp hover:underline font-medium">
             View original post <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>

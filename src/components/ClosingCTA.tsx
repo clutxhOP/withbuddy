@@ -1,14 +1,21 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
+
+const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
 
 const ClosingCTA = () => {
-  const scrollToForm = () => {
-    document.getElementById("signup-form")?.scrollIntoView({ behavior: "smooth" });
+  const handleWhatsAppClick = () => {
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-t from-primary/[0.03] via-transparent to-transparent">
-      <div className="container max-w-2xl text-center">
+    <section className="py-24 px-4 relative overflow-hidden">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.04] via-transparent to-muted/20" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/[0.03] rounded-full blur-3xl" />
+      
+      <div className="container max-w-2xl text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,15 +27,21 @@ const ClosingCTA = () => {
           </h2>
           
           <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto leading-relaxed">
-            I'll send you a few real leads for free. No commitment. If they're useful, you'll know what to do next.
+            Have a quick conversation with Buddy. No forms, no sales calls. Just a friendly chat to see if it's a fit.
           </p>
           
-          <Button variant="hero" size="lg" onClick={scrollToForm}>
-            Get my first leads free
+          <Button 
+            variant="hero" 
+            size="lg" 
+            onClick={handleWhatsAppClick}
+            className="gap-2"
+          >
+            <MessageCircle className="w-5 h-5" />
+            Talk to Buddy on WhatsApp
           </Button>
           
           <p className="text-sm text-muted-foreground mt-4">
-            No spam. No credit card. Cancel anytime.
+            No commitment. Cancel anytime.
           </p>
         </motion.div>
       </div>

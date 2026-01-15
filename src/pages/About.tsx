@@ -9,8 +9,12 @@ const About = () => {
       <Navigation />
       
       {/* Section 1: Hero - Strong Open */}
-      <section className="pt-20 pb-12 md:pt-24 md:pb-16 lg:pt-28 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 pb-12 md:pt-32 md:pb-16 lg:pt-36 lg:pb-20 relative overflow-hidden">
+        {/* Subtle warm gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] via-transparent to-transparent" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -22,18 +26,18 @@ const About = () => {
             </p>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-foreground leading-[1.1] tracking-tight mb-6">
-              Built to listen where intent actually happens
+              Connecting people who need a service with the businesses that provide it
             </h1>
             
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Buddy is an AI super networker that scans public online conversations and surfaces high-intent opportunities in real time.
+              Buddy listens to public online conversations and surfaces high-intent opportunities in real time.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Section 2: The Problem - Stacked Signals */}
-      <section className="py-12 md:py-16 lg:py-20 bg-muted/30">
+      <section className="py-12 md:py-16 lg:py-20 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -101,10 +105,10 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300"
+              className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300 border border-border/20"
             >
               <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
-                Scans in real time
+                Listens in real time
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Buddy continuously monitors public online discussions as they happen.
@@ -117,7 +121,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300"
+              className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300 border border-border/20"
             >
               <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
                 Finds expressed intent
@@ -133,7 +137,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300"
+              className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300 border border-border/20"
             >
               <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
                 Keeps humans in control
@@ -147,7 +151,7 @@ const About = () => {
       </section>
 
       {/* Section 5: About the Founder - Editorial Feature */}
-      <section className="py-12 md:py-16 lg:py-20 bg-muted/20">
+      <section className="py-12 md:py-16 lg:py-20 bg-muted/15">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -202,8 +206,11 @@ const About = () => {
       </section>
 
       {/* Section 6: Closing Manifesto */}
-      <section className="py-16 md:py-24 lg:py-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 lg:py-28 relative overflow-hidden">
+        {/* Subtle gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-muted/20 via-transparent to-transparent" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

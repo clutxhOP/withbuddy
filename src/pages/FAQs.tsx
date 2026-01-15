@@ -1,57 +1,60 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+
+const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
 
 const faqs = [
   {
     question: "What is Buddy?",
-    answer: "Buddy is an AI super networker that finds real people online who are actively looking for help related to your business."
+    answer: "Buddy is a super connector that finds real people online who are actively looking for help related to your business. It connects people who need a service with the businesses that provide it."
   },
   {
     question: "How does it work?",
-    answer: "Buddy monitors public online conversations in real time. When someone asks for something relevant to you, Buddy sends it to you."
+    answer: "Buddy listens to public online conversations in real time. When someone asks for something relevant to you, Buddy sends it to you via WhatsApp."
   },
   {
     question: "Where do the leads come from?",
-    answer: "From real discussions happening publicly across the internet. These are not lists or scraped databases."
+    answer: "From real discussions happening publicly across the internet. These are not lists or scraped databases — they're actual people expressing genuine needs."
   },
   {
     question: "Are these cold leads?",
-    answer: "No. The people Buddy finds are already expressing intent or a need."
+    answer: "No. The people Buddy finds are already expressing intent or a need. They're warm opportunities waiting to be connected."
   },
   {
     question: "Does Buddy message people for me?",
-    answer: "No. Buddy only surfaces opportunities. You decide if and how to respond."
+    answer: "No. Buddy only surfaces opportunities. You decide if and how to respond. Human judgment stays in control."
   },
   {
     question: "Who is Buddy for?",
-    answer: "Buddy is best for service businesses, agencies, freelancers, consultants, and founders."
+    answer: "Buddy is best for service businesses, agencies, freelancers, consultants, and founders selling high-value services."
   },
   {
     question: "Can Buddy filter by niche or location?",
-    answer: "Yes. Buddy can be trained around your target market and improves with feedback."
+    answer: "Yes. Buddy can be trained around your target market and improves with feedback over time."
   },
   {
     question: "How fast does it start working?",
-    answer: "Buddy starts monitoring immediately after setup. Timing depends on how active your niche is."
+    answer: "Buddy starts listening immediately after setup. Timing depends on how active your niche is online."
   },
   {
     question: "What if the leads are not a good fit?",
-    answer: "Your feedback helps Buddy get more precise over time."
+    answer: "Your feedback helps Buddy get more precise over time. Unqualified leads are replaced for free."
   },
   {
     question: "Is Buddy fully automated?",
-    answer: "Discovery is automated. Decisions stay human."
+    answer: "Discovery is automated. Decisions stay human. Buddy listens before anyone speaks."
   },
   {
     question: "Is Buddy spammy?",
-    answer: "No. Buddy does not send mass messages or automated outreach."
+    answer: "No. Buddy does not send mass messages or automated outreach. It surfaces opportunities — it never interrupts buyers."
   },
   {
     question: "Can I try it first?",
-    answer: "Yes. Buddy is best understood by seeing it in action."
+    answer: "Yes. Just start a conversation on WhatsApp. No forms, no sales calls."
   }
 ];
 
@@ -66,7 +69,7 @@ const FAQItem = ({
   isOpen: boolean; 
   onClick: () => void;
 }) => (
-  <div className="border-b border-border/50 last:border-b-0">
+  <div className="border-b border-border/40 last:border-b-0">
     <button
       onClick={onClick}
       className="w-full py-5 md:py-6 flex items-center justify-between text-left group"
@@ -104,8 +107,8 @@ const FAQs = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const scrollToSignup = () => {
-    window.location.href = "/#signup";
+  const handleWhatsAppClick = () => {
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
@@ -113,8 +116,11 @@ const FAQs = () => {
       <Navigation />
       
       {/* Header Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
+        {/* Subtle gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] via-transparent to-transparent" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -140,7 +146,7 @@ const FAQs = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-card/50 rounded-2xl p-6 md:p-8">
+            <div className="bg-card/50 rounded-2xl p-6 md:p-8 border border-border/20">
               {faqs.map((faq, index) => (
                 <FAQItem
                   key={index}
@@ -165,12 +171,15 @@ const FAQs = () => {
             className="max-w-md mx-auto text-center"
           >
             <p className="text-muted-foreground mb-5">Still curious?</p>
-            <button
-              onClick={scrollToSignup}
-              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-primary-foreground bg-primary rounded-full hover:opacity-90 transition-opacity"
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={handleWhatsAppClick}
+              className="gap-2"
             >
-              Get my first leads free
-            </button>
+              <MessageCircle className="w-5 h-5" />
+              Talk to Buddy on WhatsApp
+            </Button>
           </motion.div>
         </div>
       </section>

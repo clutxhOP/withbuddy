@@ -17,8 +17,11 @@ const principles = [
 
 const QualificationSection = () => {
   return (
-    <section className="py-20 px-4">
-      <div className="container max-w-5xl">
+    <section className="py-20 px-4 relative">
+      {/* Subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent" />
+      
+      <div className="container max-w-5xl relative">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold">
             Is Buddy right for you?
@@ -44,7 +47,7 @@ const QualificationSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="text-lg text-muted-foreground pl-4 border-l-2 border-primary/40"
+                  className="text-lg text-muted-foreground pl-4 border-l-2 border-primary/50"
                 >
                   {audience}
                 </motion.li>
@@ -59,7 +62,7 @@ const QualificationSection = () => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="bg-muted/40 rounded-2xl p-6 border border-border/30">
+            <div className="bg-muted/30 rounded-2xl p-6 border border-border/20">
               <h3 className="text-lg font-semibold text-foreground mb-6">
                 What Buddy will never do
               </h3>

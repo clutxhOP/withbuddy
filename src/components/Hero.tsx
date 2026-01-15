@@ -178,7 +178,7 @@ const Hero = () => {
                                  style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
                             
                             <div className="flex items-center justify-between gap-2 mb-2">
-                              <span className="text-xs font-semibold text-primary">🔥 High intent</span>
+                              <span className="inline-flex items-center gap-1 text-xs font-semibold text-whatsapp">⚡ High intent</span>
                               <div className="flex items-center gap-1">
                                 <span className="text-[10px] text-muted-foreground">now</span>
                                 {/* Delivery status */}
@@ -215,7 +215,7 @@ const Hero = () => {
                               We desperately need a new website. Our current one looks like it's fro...
                             </p>
                             
-                            <a href="#" className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline font-medium">
+                            <a href="#" className="inline-flex items-center gap-1 text-[11px] text-whatsapp hover:underline font-medium">
                               View post <ExternalLink className="w-2.5 h-2.5" />
                             </a>
                           </div>

@@ -117,7 +117,7 @@ const Hero = () => {
             className="relative"
           >
             {/* Modern iPhone frame - iPhone 14/15 Pro style */}
-            <div className="relative mx-auto" style={{ width: '280px', aspectRatio: '393/852' }}>
+            <div className="relative mx-auto" style={{ width: '280px', aspectRatio: '9/17' }}>
               {/* Subtle shadow for depth */}
               <div className="absolute inset-0 rounded-[48px] bg-black/20 blur-2xl translate-y-4 scale-[0.92]" />
               

@@ -14,10 +14,10 @@ const Insights = () => {
       <Navigation />
       
       {/* Header with soft background tint */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
+      <section className="pt-36 md:pt-44 pb-16 md:pb-20 relative overflow-hidden">
         {/* Subtle warm gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/40 to-transparent" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.03] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-transparent" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
         
         <div className="container mx-auto px-6 md:px-8 max-w-4xl relative">
           <motion.div
@@ -32,7 +32,7 @@ const Insights = () => {
             <p className="text-muted-foreground text-lg md:text-xl max-w-xl">
               Thoughts on connection, timing, and modern lead generation.
             </p>
-            <div className="mt-8 w-16 h-px bg-primary/30 mx-auto md:mx-0" />
+            <div className="mt-8 w-16 h-px bg-primary/40 mx-auto md:mx-0" />
           </motion.div>
         </div>
       </section>
@@ -47,9 +47,9 @@ const Insights = () => {
             onClick={() => navigate(`/insights/${featuredInsight.id}`)}
             className="group cursor-pointer"
           >
-            <div className="relative bg-card rounded-2xl p-8 md:p-12 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/20 overflow-hidden">
+            <div className="relative bg-card rounded-2xl p-8 md:p-12 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/30 overflow-hidden">
               {/* Subtle gradient accent */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/6 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
               
               <div className="relative">
                 <span className="inline-block text-xs font-medium tracking-wider uppercase text-primary mb-4">
@@ -95,7 +95,7 @@ const Insights = () => {
                   onClick={() => navigate(`/insights/${insight.id}`)}
                   className="group cursor-pointer"
                 >
-                  <div className="py-8 px-6 md:px-8 rounded-xl bg-background hover:bg-muted/20 border border-transparent hover:border-border/30 transition-all duration-300">
+                  <div className="py-8 px-6 md:px-8 rounded-xl bg-background hover:bg-muted/30 border border-transparent hover:border-border/40 transition-all duration-300">
                     <h3 className="text-lg md:text-xl font-medium text-foreground mb-2 group-hover:text-foreground/80 transition-colors">
                       {insight.title}
                     </h3>

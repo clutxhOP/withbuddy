@@ -10,16 +10,16 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-16 px-4 border-t border-border/30 bg-muted/20">
+    <footer className="py-16 px-4 border-t border-border/40 bg-muted/30">
       <div className="container max-w-4xl">
         {/* Closing statement */}
         <div className="text-center mb-10">
-          <p className="text-lg text-foreground/80 mb-6 max-w-md mx-auto leading-relaxed">
+          <p className="text-lg text-foreground/90 mb-6 max-w-md mx-auto leading-relaxed">
             If this makes sense for your business, Buddy is ready when you are.
           </p>
           
           <Button 
-            variant="hero" 
+            variant="whatsapp" 
             size="lg" 
             onClick={handleWhatsAppClick}
             className="gap-2"

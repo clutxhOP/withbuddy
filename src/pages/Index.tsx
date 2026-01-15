@@ -7,8 +7,8 @@ import WhatYouReceive from "@/components/WhatYouReceive";
 import WhyBuddy from "@/components/WhyBuddy";
 import QualificationSection from "@/components/QualificationSection";
 import Pricing from "@/components/Pricing";
-import ClosingCTA from "@/components/ClosingCTA";
 import Footer from "@/components/Footer";
+import StickyWhatsApp from "@/components/StickyWhatsApp";
 
 const Index = () => {
   return (
@@ -22,8 +22,8 @@ const Index = () => {
       <WhyBuddy />
       <QualificationSection />
       <Pricing />
-      <ClosingCTA />
       <Footer />
+      <StickyWhatsApp />
     </main>
   );
 };

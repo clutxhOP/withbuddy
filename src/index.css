@@ -6,76 +6,86 @@
 
 @layer base {
   :root {
-    /* Warm, human, premium color system */
-    --background: 35 30% 97%;
-    --foreground: 25 15% 20%;
+    /* Warm, human, premium color system - Higher contrast */
+    --background: 38 40% 96%;
+    --foreground: 20 20% 15%;
 
-    --card: 40 35% 99%;
-    --card-foreground: 25 15% 20%;
+    --card: 40 50% 99%;
+    --card-foreground: 20 20% 15%;
 
-    --popover: 40 35% 99%;
-    --popover-foreground: 25 15% 20%;
+    --popover: 40 50% 99%;
+    --popover-foreground: 20 20% 15%;
 
     /* Muted rose / dusty pink accent */
-    --primary: 350 45% 60%;
-    --primary-foreground: 40 35% 99%;
+    --primary: 350 50% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 25% 94%;
-    --secondary-foreground: 25 15% 30%;
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 20 20% 20%;
 
-    --muted: 35 20% 92%;
-    --muted-foreground: 25 10% 45%;
+    --muted: 35 25% 90%;
+    --muted-foreground: 20 15% 40%;
 
     /* Accent matches primary for cohesion */
-    --accent: 350 45% 60%;
-    --accent-foreground: 40 35% 99%;
+    --accent: 350 50% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* WhatsApp green - for WhatsApp elements ONLY */
+    --whatsapp: 142 70% 40%;
+    --whatsapp-foreground: 0 0% 100%;
 
     --destructive: 0 65% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 350 45% 60%;
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 350 50% 55%;
 
     --radius: 0.75rem;
 
     /* Custom tokens - warm and human */
-    --gradient-hero: linear-gradient(135deg, hsl(350 45% 60%), hsl(355 50% 55%));
-    --gradient-accent: linear-gradient(135deg, hsl(350 45% 60%), hsl(360 50% 58%));
-    --gradient-warm: radial-gradient(ellipse at top, hsl(35 30% 97%) 0%, hsl(30 25% 95%) 100%);
-    --shadow-soft: 0 4px 20px -4px hsl(25 15% 20% / 0.06);
-    --shadow-card: 0 8px 30px -8px hsl(25 15% 20% / 0.08);
-    --shadow-glow: 0 0 40px hsl(350 45% 60% / 0.15);
+    --gradient-hero: linear-gradient(135deg, hsl(350 50% 55%), hsl(355 55% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(350 50% 55%), hsl(360 55% 52%));
+    --gradient-whatsapp: linear-gradient(135deg, hsl(142 70% 40%), hsl(142 70% 35%));
+    --gradient-warm: radial-gradient(ellipse at top, hsl(38 40% 96%) 0%, hsl(35 35% 93%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(20 20% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(20 20% 15% / 0.12);
+    --shadow-glow: 0 0 40px hsl(350 50% 55% / 0.2);
+    --shadow-whatsapp: 0 0 30px hsl(142 70% 40% / 0.25);
   }
 
   .dark {
-    --background: 25 15% 10%;
-    --foreground: 35 20% 95%;
+    --background: 25 20% 8%;
+    --foreground: 38 30% 95%;
 
-    --card: 25 15% 13%;
-    --card-foreground: 35 20% 95%;
+    --card: 25 18% 12%;
+    --card-foreground: 38 30% 95%;
 
-    --popover: 25 15% 13%;
-    --popover-foreground: 35 20% 95%;
+    --popover: 25 18% 12%;
+    --popover-foreground: 38 30% 95%;
 
-    --primary: 350 45% 65%;
-    --primary-foreground: 25 15% 10%;
+    --primary: 350 50% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 12% 18%;
-    --secondary-foreground: 35 20% 90%;
+    --secondary: 25 15% 16%;
+    --secondary-foreground: 38 25% 90%;
 
-    --muted: 25 12% 20%;
-    --muted-foreground: 35 10% 60%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 38 15% 55%;
 
-    --accent: 350 45% 65%;
+    --accent: 350 50% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 55% 40%;
+    /* WhatsApp green - same in dark mode */
+    --whatsapp: 142 70% 45%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    --destructive: 0 55% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 12% 22%;
-    --input: 25 12% 22%;
-    --ring: 350 45% 65%;
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 350 50% 60%;
   }
 }
 
@@ -103,6 +113,10 @@
     background: var(--gradient-accent);
   }
 
+  .gradient-whatsapp {
+    background: var(--gradient-whatsapp);
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -113,6 +127,10 @@
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-whatsapp {
+    box-shadow: var(--shadow-whatsapp);
   }
 
   .hover-lift {

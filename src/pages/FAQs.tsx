@@ -10,7 +10,7 @@ const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with
 const faqs = [
   {
     question: "What is Buddy?",
-    answer: "Buddy is a super connector that finds real people online who are actively looking for help related to your business. It connects people who need a service with the businesses that provide it."
+    answer: "Buddy is a super connector that finds real people online who are actively looking for help related to your business. It connects businesses with people actively looking for their service."
   },
   {
     question: "How does it work?",
@@ -69,7 +69,7 @@ const FAQItem = ({
   isOpen: boolean; 
   onClick: () => void;
 }) => (
-  <div className="border-b border-border/40 last:border-b-0">
+  <div className="border-b border-border/50 last:border-b-0">
     <button
       onClick={onClick}
       className="w-full py-5 md:py-6 flex items-center justify-between text-left group"
@@ -116,9 +116,9 @@ const FAQs = () => {
       <Navigation />
       
       {/* Header Section */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-20 relative overflow-hidden">
+      <section className="pt-36 md:pt-44 pb-16 md:pb-20 relative overflow-hidden">
         {/* Subtle gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] via-transparent to-transparent" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
@@ -146,7 +146,7 @@ const FAQs = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-card/50 rounded-2xl p-6 md:p-8 border border-border/20">
+            <div className="bg-card rounded-2xl p-6 md:p-8 border border-border/40 shadow-soft">
               {faqs.map((faq, index) => (
                 <FAQItem
                   key={index}
@@ -172,7 +172,7 @@ const FAQs = () => {
           >
             <p className="text-muted-foreground mb-5">Still curious?</p>
             <Button
-              variant="hero"
+              variant="whatsapp"
               size="lg"
               onClick={handleWhatsAppClick}
               className="gap-2"

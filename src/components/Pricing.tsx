@@ -13,8 +13,8 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-20 px-4 relative overflow-hidden">
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-muted/40 to-muted/30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/40 via-muted/50 to-muted/40" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-3xl" />
       
       <div className="container max-w-4xl relative">
         <AnimatedSection className="text-center mb-10">
@@ -35,9 +35,9 @@ const Pricing = () => {
           <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full scale-90 -z-10" />
           
           {/* Pricing card */}
-          <div className="relative bg-card rounded-2xl border border-border/50 shadow-card overflow-hidden">
+          <div className="relative bg-card rounded-2xl border border-border/60 shadow-card overflow-hidden">
             {/* Card header */}
-            <div className="bg-primary/5 px-6 py-5 border-b border-border/30">
+            <div className="bg-primary/8 px-6 py-5 border-b border-border/40">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-xl font-semibold text-foreground">Buddy Plan</h3>
@@ -55,21 +55,21 @@ const Pricing = () => {
               {/* Features */}
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">Up to <strong>40 qualified leads</strong> per month</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">Delivered directly to your WhatsApp</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">Real-time high-intent signals</span>
                 </li>
               </ul>
 
               {/* Guarantee badge */}
-              <div className="bg-primary/5 rounded-xl p-4 mb-6 border border-primary/10">
+              <div className="bg-primary/8 rounded-xl p-4 mb-6 border border-primary/15">
                 <div className="flex items-start gap-3">
                   <Shield className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
@@ -86,7 +86,7 @@ const Pricing = () => {
 
               {/* CTA */}
               <Button 
-                variant="hero" 
+                variant="whatsapp" 
                 size="lg" 
                 className="w-full gap-2"
                 onClick={handleWhatsAppClick}

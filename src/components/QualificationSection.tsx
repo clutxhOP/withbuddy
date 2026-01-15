@@ -19,7 +19,7 @@ const QualificationSection = () => {
   return (
     <section className="py-20 px-4 relative">
       {/* Subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/20 to-transparent" />
       
       <div className="container max-w-5xl relative">
         <AnimatedSection className="text-center mb-12">
@@ -47,7 +47,7 @@ const QualificationSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-20px" }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className="text-lg text-muted-foreground pl-4 border-l-2 border-primary/50"
+                  className="text-lg text-muted-foreground pl-4 border-l-2 border-primary/60"
                 >
                   {audience}
                 </motion.li>
@@ -62,7 +62,7 @@ const QualificationSection = () => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="bg-muted/30 rounded-2xl p-6 border border-border/20">
+            <div className="bg-muted/40 rounded-2xl p-6 border border-border/30">
               <h3 className="text-lg font-semibold text-foreground mb-6">
                 What Buddy will never do
               </h3>
@@ -76,7 +76,7 @@ const QualificationSection = () => {
                     transition={{ duration: 0.4, delay: index * 0.08 }}
                     className="flex items-center gap-3 text-lg text-muted-foreground"
                   >
-                    <span className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
+                    <span className="w-6 h-6 rounded-full bg-destructive/15 flex items-center justify-center flex-shrink-0">
                       <X className="w-3.5 h-3.5 text-destructive" />
                     </span>
                     {principle}

@@ -30,7 +30,7 @@ const Insights = () => {
               Insights
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-xl">
-              Thoughts on connection, timing, and modern lead generation.
+              Thoughts on connection, timing, and how real opportunities happen online.
             </p>
             <div className="mt-8 w-16 h-px bg-primary/40 mx-auto md:mx-0" />
           </motion.div>

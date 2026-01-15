@@ -20,7 +20,7 @@ const Pricing = () => {
         <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            High-intent conversations. Delivered fast. You decide how to reply.
+            The right conversations. Brought to you. You decide how to respond.
           </p>
         </AnimatedSection>
 
@@ -56,15 +56,15 @@ const Pricing = () => {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Up to <strong>40 qualified leads</strong> per month</span>
+                  <span className="text-foreground">Up to <strong>40 qualified opportunities</strong> per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Delivered directly to your WhatsApp</span>
+                  <span className="text-foreground">Brought directly to your WhatsApp</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Real-time high-intent signals</span>
+                  <span className="text-foreground">Real-time matching as conversations happen</span>
                 </li>
               </ul>
 
@@ -75,10 +75,10 @@ const Pricing = () => {
                   <div>
                     <p className="font-medium text-foreground text-sm">Quality Guarantee</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      If a lead is not qualified, we replace it for free.
+                      If a match isn't relevant, we replace it for free.
                     </p>
                     <p className="text-xs text-muted-foreground/80 mt-2">
-                      Qualified means it matches your niche and location.
+                      Relevant means it matches your niche and location.
                     </p>
                   </div>
                 </div>

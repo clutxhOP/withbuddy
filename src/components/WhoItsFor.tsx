@@ -14,7 +14,7 @@ const WhoItsFor = () => {
       <div className="container max-w-3xl">
         <AnimatedSection className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-            Who Buddy works best for
+            Who Buddy connects
           </h2>
         </AnimatedSection>
         

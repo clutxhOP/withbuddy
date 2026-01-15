@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
+const WHATSAPP_LINK = "https://wa.me/971547399726";
 
 const StickyWhatsApp = () => {
   const handleClick = () => {

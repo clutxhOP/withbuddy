@@ -3,7 +3,7 @@ import { MessageCircle, ExternalLink, Check, CheckCheck, Globe } from "lucide-re
 import AnimatedSection from "./AnimatedSection";
 import { useState, useEffect } from "react";
 
-const exampleLeads = [
+const exampleConversations = [
   {
     timeAgo: "2 min ago",
     source: "Reddit",
@@ -43,7 +43,7 @@ const rowVariants = {
   },
 };
 
-const LeadRow = ({ lead, index }: { lead: typeof exampleLeads[0]; index: number }) => {
+const ConversationRow = ({ lead, index }: { lead: typeof exampleConversations[0]; index: number }) => {
   const [messagePhase, setMessagePhase] = useState<'idle' | 'sending' | 'delivered'>('idle');
 
   useEffect(() => {
@@ -154,7 +154,7 @@ const Storyboard = () => {
             <span className="text-sm font-medium">Delivered to WhatsApp</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            See what Buddy finds
+            See the connections Buddy makes
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Real people actively asking for help — delivered straight to your WhatsApp.
@@ -180,15 +180,15 @@ const Storyboard = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="space-y-6"
         >
-          {exampleLeads.map((lead, index) => (
-            <LeadRow key={index} lead={lead} index={index} />
+          {exampleConversations.map((lead, index) => (
+            <ConversationRow key={index} lead={lead} index={index} />
           ))}
         </motion.div>
 
         <AnimatedSection delay={0.4} className="text-center mt-10">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-whatsapp rounded-full animate-pulse-soft" />
-            Buddy is listening for new leads right now...
+            Buddy is listening for new conversations right now...
           </p>
         </AnimatedSection>
       </div>

@@ -12,16 +12,16 @@ const benefits = [
     description: "Zero ad spend. Pay nothing until you see results.",
   },
   {
-    title: "No scraping spam",
-    description: "Quality leads, not random email lists or bot traffic.",
+    title: "No scraping or spam",
+    description: "Quality connections, not random email lists or bot traffic.",
   },
   {
-    title: "Context with every lead",
+    title: "Context with every opportunity",
     description: "Know exactly what they're looking for before you respond.",
   },
   {
     title: "Works 24/7 while you sleep",
-    description: "Always monitoring. Wake up to fresh leads in your inbox.",
+    description: "Always listening. Wake up to fresh opportunities.",
   },
 ];
 
@@ -34,7 +34,7 @@ const WhyBuddy = () => {
             Why Buddy?
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Traditional lead gen is broken. Buddy fixes it.
+            Traditional outreach is broken. Buddy takes a different approach.
           </p>
         </AnimatedSection>
         

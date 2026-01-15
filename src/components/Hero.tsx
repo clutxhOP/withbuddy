@@ -3,9 +3,27 @@ import { MessageCircle, ExternalLink, Check, CheckCheck, Smile, Paperclip, Camer
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
+const useCurrentTime = () => {
+  const [time, setTime] = useState(() => {
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      setTime(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return time;
+};
+
 const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
 
 const Hero = () => {
+  const currentTime = useCurrentTime();
   const [animationPhase, setAnimationPhase] = useState<'scanning' | 'found' | 'sending' | 'delivered'>('scanning');
 
   useEffect(() => {
@@ -120,13 +138,27 @@ const Hero = () => {
                 
                 {/* Screen bezel */}
                 <div className="absolute inset-[4px] rounded-[44px] bg-[#ece5dd] dark:bg-[#0b141a] overflow-hidden flex flex-col">
-                  {/* Dynamic Island */}
-                  <div className="absolute top-[12px] left-1/2 -translate-x-1/2 z-20 w-[100px] h-[32px] bg-black rounded-full flex items-center justify-center">
-                    <div className="w-[10px] h-[10px] rounded-full bg-[#1a1a1a] ring-1 ring-[#2a2a2a] ml-8" />
+                  {/* Status bar with time */}
+                  <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 pt-3">
+                    <span className="text-[11px] font-semibold text-black dark:text-white">{currentTime}</span>
+                    <div className="w-[90px]" /> {/* Space for Dynamic Island */}
+                    <div className="flex items-center gap-1">
+                      <div className="flex gap-[2px]">
+                        <div className="w-[3px] h-[10px] bg-black dark:bg-white rounded-sm" />
+                        <div className="w-[3px] h-[10px] bg-black dark:bg-white rounded-sm" />
+                        <div className="w-[3px] h-[10px] bg-black dark:bg-white rounded-sm" />
+                        <div className="w-[3px] h-[10px] bg-black/30 dark:bg-white/30 rounded-sm" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Dynamic Island - slimmer */}
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 z-20 w-[85px] h-[24px] bg-black rounded-full flex items-center justify-center">
+                    <div className="w-[8px] h-[8px] rounded-full bg-[#1a1a1a] ring-1 ring-[#2a2a2a] ml-6" />
                   </div>
                   
                   {/* WhatsApp header */}
-                  <div className="bg-whatsapp px-4 pt-14 pb-3 flex items-center gap-3">
+                  <div className="bg-whatsapp px-4 pt-12 pb-3 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-whatsapp-foreground/20 flex items-center justify-center">
                       <span className="text-whatsapp-foreground font-bold text-lg">B</span>
                     </div>

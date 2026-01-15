@@ -1,21 +1,24 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, ExternalLink, Check, CheckCheck } from "lucide-react";
+import { MessageCircle, ExternalLink, Check, CheckCheck, Globe } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { useState, useEffect } from "react";
 
 const exampleLeads = [
   {
     timeAgo: "2 min ago",
+    source: "Reddit",
     title: "Looking for a web designer for my restaurant",
     preview: "We desperately need a new website. Our current one looks like it's from 2005. Budget is around $2-3k.",
   },
   {
     timeAgo: "45 min ago",
+    source: "Facebook Group",
     title: "Need help with Facebook ads - willing to pay",
     preview: "I've been trying to run FB ads for my e-commerce store but I'm just burning money. Looking for someone who knows what they're doing.",
   },
   {
     timeAgo: "1 hour ago",
+    source: "LinkedIn",
     title: "Seeking a bookkeeper for my SaaS startup",
     preview: "We just raised our seed round and need to get our finances in order. Looking for a bookkeeper who understands startups.",
   },
@@ -26,26 +29,25 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
     },
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20, scale: 0.95 },
+const rowVariants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: { duration: 0.5, ease: [0, 0, 0.2, 1] as const },
   },
 };
 
-const WhatsAppMessage = ({ lead, index }: { lead: typeof exampleLeads[0]; index: number }) => {
+const LeadRow = ({ lead, index }: { lead: typeof exampleLeads[0]; index: number }) => {
   const [messagePhase, setMessagePhase] = useState<'idle' | 'sending' | 'delivered'>('idle');
 
   useEffect(() => {
-    const startDelay = 1000 + index * 600;
+    const startDelay = 1000 + index * 800;
     
     const runAnimation = () => {
       setMessagePhase('idle');
@@ -54,7 +56,7 @@ const WhatsAppMessage = ({ lead, index }: { lead: typeof exampleLeads[0]; index:
     };
 
     const initialTimeout = setTimeout(runAnimation, startDelay);
-    const interval = setInterval(runAnimation, 5000);
+    const interval = setInterval(runAnimation, 6000);
     
     return () => {
       clearTimeout(initialTimeout);
@@ -64,32 +66,41 @@ const WhatsAppMessage = ({ lead, index }: { lead: typeof exampleLeads[0]; index:
 
   return (
     <motion.div
-      variants={cardVariants}
-      className="relative"
+      variants={rowVariants}
+      className="grid md:grid-cols-2 gap-4 md:gap-6"
     >
-      {/* WhatsApp-style message bubble */}
+      {/* Left Column - Original Post (Neutral) */}
+      <div className="bg-muted/40 dark:bg-muted/20 rounded-xl p-5 border border-border/50">
+        <div className="flex items-center gap-2 mb-3">
+          <Globe className="w-4 h-4 text-muted-foreground" />
+          <span className="text-xs font-medium text-muted-foreground">{lead.source}</span>
+          <span className="text-xs text-muted-foreground/60">• {lead.timeAgo}</span>
+        </div>
+        <h3 className="font-semibold text-foreground mb-2">{lead.title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+          {lead.preview}
+        </p>
+      </div>
+
+      {/* Right Column - WhatsApp Delivery (Green styled) */}
       <motion.div 
-        className="relative max-w-full"
+        className="relative"
         animate={{
           scale: messagePhase === 'delivered' ? [1, 1.01, 1] : 1,
         }}
         transition={{ duration: 0.2 }}
       >
-        {/* Message bubble with WhatsApp styling */}
-        <div className="bg-white dark:bg-[#202c33] rounded-xl rounded-tl-sm p-4 shadow-[0_1px_2px_rgba(0,0,0,0.1)] border border-whatsapp/20 relative">
-          {/* Message tail */}
-          <div 
-            className="absolute -left-2 top-0 w-3 h-3 bg-white dark:bg-[#202c33]" 
-            style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} 
-          />
-          
-          {/* Header with badge and time */}
-          <div className="flex items-center justify-between gap-3 mb-2">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-whatsapp bg-whatsapp/10 px-2 py-1 rounded-full">
-              ⚡ High intent
-            </span>
+        <div className="bg-whatsapp/10 dark:bg-whatsapp/15 rounded-xl p-5 border border-whatsapp/30 relative overflow-hidden">
+          {/* WhatsApp header bar */}
+          <div className="flex items-center justify-between gap-3 mb-3">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-full bg-whatsapp flex items-center justify-center">
+                <MessageCircle className="w-3 h-3 text-whatsapp-foreground" />
+              </div>
+              <span className="text-xs font-semibold text-whatsapp">WhatsApp Delivery</span>
+            </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] text-muted-foreground">{lead.timeAgo}</span>
+              <span className="text-[11px] text-muted-foreground">now</span>
               <AnimatePresence mode="wait">
                 {messagePhase === 'sending' && (
                   <motion.div
@@ -113,8 +124,12 @@ const WhatsAppMessage = ({ lead, index }: { lead: typeof exampleLeads[0]; index:
             </div>
           </div>
           
-          {/* Message content */}
-          <h3 className="font-semibold text-foreground mb-1.5">{lead.title}</h3>
+          {/* High intent badge */}
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-whatsapp bg-whatsapp/20 px-2.5 py-1 rounded-full mb-3">
+            ⚡ High intent
+          </span>
+          
+          <h3 className="font-semibold text-foreground mb-2">{lead.title}</h3>
           <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-3">
             {lead.preview}
           </p>
@@ -131,8 +146,8 @@ const WhatsAppMessage = ({ lead, index }: { lead: typeof exampleLeads[0]; index:
 
 const Storyboard = () => {
   return (
-    <section className="py-20 px-4 overflow-hidden bg-[#ece5dd]/30 dark:bg-muted/20">
-      <div className="container max-w-3xl">
+    <section className="py-20 px-4 overflow-hidden">
+      <div className="container max-w-5xl">
         <AnimatedSection className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-whatsapp/10 text-whatsapp mb-6">
             <MessageCircle className="w-4 h-4" />
@@ -146,15 +161,27 @@ const Storyboard = () => {
           </p>
         </AnimatedSection>
 
+        {/* Two-column layout: Left = original post, Right = WhatsApp delivery */}
+        <div className="mb-8">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-4">
+            <p className="text-sm font-medium text-muted-foreground text-center md:text-left">
+              Where Buddy finds the post
+            </p>
+            <p className="text-sm font-medium text-whatsapp text-center md:text-left">
+              What lands in your WhatsApp
+            </p>
+          </div>
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="space-y-4"
+          className="space-y-6"
         >
           {exampleLeads.map((lead, index) => (
-            <WhatsAppMessage key={index} lead={lead} index={index} />
+            <LeadRow key={index} lead={lead} index={index} />
           ))}
         </motion.div>
 

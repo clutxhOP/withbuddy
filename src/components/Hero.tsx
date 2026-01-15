@@ -119,7 +119,7 @@ const Hero = () => {
                 <div className="absolute -right-[2px] top-[160px] w-[3px] h-[72px] bg-[#3a3540] rounded-l-[2px]" />
                 
                 {/* Screen bezel */}
-                <div className="absolute inset-[4px] rounded-[44px] bg-black overflow-hidden">
+                <div className="absolute inset-[4px] rounded-[44px] bg-[#ece5dd] dark:bg-[#0b141a] overflow-hidden flex flex-col">
                   {/* Dynamic Island */}
                   <div className="absolute top-[12px] left-1/2 -translate-x-1/2 z-20 w-[100px] h-[32px] bg-black rounded-full flex items-center justify-center">
                     <div className="w-[10px] h-[10px] rounded-full bg-[#1a1a1a] ring-1 ring-[#2a2a2a] ml-8" />
@@ -139,7 +139,7 @@ const Hero = () => {
                   </div>
 
                   {/* Chat area */}
-                  <div className="p-4 bg-[#ece5dd] dark:bg-[#0b141a] flex-1 space-y-3" style={{ minHeight: '320px' }}>
+                  <div className="p-4 flex-1 space-y-3">
                     {/* Scanning state */}
                     <AnimatePresence mode="wait">
                       {animationPhase === 'scanning' && (

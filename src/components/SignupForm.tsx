@@ -49,7 +49,7 @@ const SignupForm = () => {
                       Let's get started
                     </h2>
                     <p className="text-muted-foreground">
-                      We'll bring matched opportunities directly to your WhatsApp.
+                      We'll send real matched leads directly to your WhatsApp.
                     </p>
                   </div>
 
@@ -74,7 +74,7 @@ const SignupForm = () => {
                       />
                       <p className="text-xs text-muted-foreground flex items-center gap-1.5">
                         <Shield className="w-3 h-3" />
-                        Only matched opportunities. No calls. No spam.
+                        Only matched leads. No calls. No spam.
                       </p>
                     </motion.div>
 
@@ -130,7 +130,7 @@ const SignupForm = () => {
                         size="lg"
                         className="w-full h-14 text-base"
                       >
-                        Start connecting
+                        Get my free leads
                       </Button>
                     </motion.div>
                   </form>

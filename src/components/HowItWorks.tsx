@@ -6,20 +6,20 @@ const steps = [
   {
     icon: Radio,
     title: "Listen",
-    description: "Buddy monitors public conversations across the internet in real time.",
-    benefit: "Hear requests the moment they happen.",
+    description: "Buddy scans public conversations across the internet in real time.",
+    benefit: "Never miss a potential customer again.",
   },
   {
     icon: Filter,
-    title: "Match",
-    description: "Surfaces people genuinely asking for help — not just keywords.",
-    benefit: "Only see conversations worth having.",
+    title: "Qualify",
+    description: "Filters for genuine buying intent, not just keywords.",
+    benefit: "Only get leads that are ready to buy.",
   },
   {
     icon: Send,
-    title: "Connect",
-    description: "Brings the right opportunity to your WhatsApp with full context.",
-    benefit: "Step in naturally, at the right moment.",
+    title: "Deliver",
+    description: "Sends the lead instantly to WhatsApp with context.",
+    benefit: "Respond while the intent is still hot.",
   },
 ];
 
@@ -49,7 +49,7 @@ const HowItWorks = () => {
         <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">How Buddy works</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            From conversation to connection in three simple steps.
+            From conversation to conversion in three simple steps.
           </p>
         </AnimatedSection>
         

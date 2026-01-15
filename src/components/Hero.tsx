@@ -69,8 +69,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-5"
             >
-              The right people are asking for help.{" "}
-              <span className="text-primary">Buddy connects you.</span>
+              Stop missing high-intent leads.{" "}
+              <span className="text-primary">Buddy delivers them instantly.</span>
             </motion.h1>
             
             <motion.p
@@ -200,7 +200,7 @@ const Hero = () => {
                                 className="w-2 h-2 bg-whatsapp rounded-full" 
                               />
                             </div>
-                            <p className="text-sm text-muted-foreground">Listening for opportunities...</p>
+                            <p className="text-sm text-muted-foreground">Listening to conversations...</p>
                           </div>
                         </motion.div>
                       )}
@@ -280,13 +280,13 @@ const Hero = () => {
                       className="flex items-center gap-1 text-xs text-muted-foreground ml-2"
                     >
                       {animationPhase === 'found' && (
-                        <span className="text-whatsapp font-medium">Match found! Sending to WhatsApp...</span>
+                        <span className="text-whatsapp font-medium">Lead found! Sending to WhatsApp...</span>
                       )}
                       {animationPhase === 'sending' && (
                         <span>Delivering...</span>
                       )}
                       {animationPhase === 'delivered' && (
-                        <span className="text-whatsapp font-medium">✓ Connection delivered</span>
+                        <span className="text-whatsapp font-medium">✓ Delivered to your WhatsApp</span>
                       )}
                     </motion.div>
 

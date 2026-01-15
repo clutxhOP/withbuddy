@@ -56,7 +56,7 @@ const Footer = () => {
         <p className="text-muted-foreground text-sm flex items-center justify-center gap-2">
           <span className="font-semibold text-foreground">Buddy</span>
           <span>—</span>
-          <span>your AI super networker</span>
+          <span>because everyone needs a Buddy</span>
           <Heart className="w-4 h-4 text-primary fill-primary/30" />
         </p>
       </div>

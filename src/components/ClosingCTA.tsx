@@ -23,11 +23,11 @@ const ClosingCTA = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            See how Buddy connects
+            See it for yourself
           </h2>
           
           <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto leading-relaxed">
-            Start a conversation with Buddy. No forms, no sales calls. Just a quick chat to see if it's a fit.
+            Have a quick conversation with Buddy. No forms, no sales calls. Just a friendly chat to see if it's a fit.
           </p>
           
           <Button 

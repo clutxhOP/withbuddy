@@ -14,7 +14,7 @@ const InsightPreview = () => {
       <div className="container max-w-3xl">
         <AnimatedSection className="mb-8">
           <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-2">
-            Perspectives
+            Thinking
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold">
             From our Insights

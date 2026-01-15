@@ -53,7 +53,7 @@ const About = () => {
             <div className="space-y-4 md:space-y-5">
               {/* Key emphasized line */}
               <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground leading-tight">
-                The best opportunities already exist online.
+                The best leads already exist online.
               </p>
               
               <div className="space-y-1 text-base md:text-lg text-muted-foreground/80 leading-relaxed pl-0 md:pl-1">
@@ -124,10 +124,10 @@ const About = () => {
               className="bg-card rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-card transition-shadow duration-300 border border-border/30"
             >
               <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3">
-                Surfaces expressed intent
+                Finds expressed intent
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                It highlights moments where people are actively asking for help.
+                It surfaces moments where people are actively asking for help.
               </p>
             </motion.div>
             
@@ -143,7 +143,7 @@ const About = () => {
                 Keeps humans in control
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Buddy never messages or spams. You decide when and how to connect.
+                Buddy never messages or spams. You decide when to step in.
               </p>
             </motion.div>
           </motion.div>
@@ -184,7 +184,7 @@ const About = () => {
               </p>
               
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-5">
-                Buddy was created from firsthand experience watching businesses struggle to find the right people — while those people were already asking for help in plain sight online.
+                Buddy was created from firsthand experience watching businesses struggle with lead generation while valuable opportunities were happening in plain sight online.
               </p>
               
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
@@ -226,7 +226,7 @@ const About = () => {
                 More relevance.
               </p>
               <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight">
-                Better connections.
+                Better conversations.
               </p>
             </div>
           </motion.div>

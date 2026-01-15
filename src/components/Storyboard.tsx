@@ -9,21 +9,18 @@ const exampleLeads = [
     source: "Reddit",
     title: "Looking for a web designer for my restaurant",
     preview: "We desperately need a new website. Our current one looks like it's from 2005. Budget is around $2-3k.",
-    url: "https://www.reddit.com/r/smallbusiness/",
   },
   {
     timeAgo: "45 min ago",
     source: "Facebook Group",
     title: "Need help with Facebook ads - willing to pay",
     preview: "I've been trying to run FB ads for my e-commerce store but I'm just burning money. Looking for someone who knows what they're doing.",
-    url: "https://www.facebook.com/groups/",
   },
   {
     timeAgo: "1 hour ago",
     source: "LinkedIn",
     title: "Seeking a bookkeeper for my SaaS startup",
     preview: "We just raised our seed round and need to get our finances in order. Looking for a bookkeeper who understands startups.",
-    url: "https://www.linkedin.com/feed/",
   },
 ];
 
@@ -138,7 +135,7 @@ const LeadRow = ({ lead, index }: { lead: typeof exampleLeads[0]; index: number 
           </p>
           
           {/* View post link */}
-          <a href={lead.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm text-whatsapp hover:underline font-medium">
+          <a href="#" className="inline-flex items-center gap-1.5 text-sm text-whatsapp hover:underline font-medium">
             View original post <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -157,10 +154,10 @@ const Storyboard = () => {
             <span className="text-sm font-medium">Delivered to WhatsApp</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            See the connections Buddy makes
+            See what Buddy finds
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Real people asking for help — brought straight to your WhatsApp.
+            Real people actively asking for help — delivered straight to your WhatsApp.
           </p>
         </AnimatedSection>
 
@@ -168,10 +165,10 @@ const Storyboard = () => {
         <div className="mb-8">
           <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-4">
             <p className="text-sm font-medium text-muted-foreground text-center md:text-left">
-              Where Buddy spots the opportunity
+              Where Buddy finds the post
             </p>
             <p className="text-sm font-medium text-whatsapp text-center md:text-left">
-              What arrives in your WhatsApp
+              What lands in your WhatsApp
             </p>
           </div>
         </div>
@@ -191,7 +188,7 @@ const Storyboard = () => {
         <AnimatedSection delay={0.4} className="text-center mt-10">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
             <span className="w-2 h-2 bg-whatsapp rounded-full animate-pulse-soft" />
-            Buddy is listening for new opportunities right now...
+            Buddy is listening for new leads right now...
           </p>
         </AnimatedSection>
       </div>

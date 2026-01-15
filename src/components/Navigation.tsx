@@ -52,7 +52,10 @@ const Navigation = () => {
     return false;
   };
 
+  const isHome = location.pathname === "/";
+
   const navLinks = [
+    { label: "Home", path: "/" },
     { label: "Insights", path: "/insights" },
     { label: "FAQs", path: "/faqs" },
     { label: "About", path: "/about" },
@@ -87,13 +90,19 @@ const Navigation = () => {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link)}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link)
-                    ? "text-foreground"
+                className={`text-sm font-medium transition-colors relative ${
+                  isActive(link) || (link.path === "/" && isHome)
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
+                {(isActive(link) || (link.path === "/" && isHome)) && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                  />
+                )}
               </button>
             ))}
           </div>
@@ -125,8 +134,8 @@ const Navigation = () => {
                   key={link.label}
                   onClick={() => handleNavClick(link)}
                   className={`text-left py-3 text-base font-medium transition-colors ${
-                    isActive(link)
-                      ? "text-foreground"
+                    isActive(link) || (link.path === "/" && isHome)
+                      ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >

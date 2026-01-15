@@ -1,16 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Check, Shield } from "lucide-react";
+import { Check, Shield, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
+const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
+
 const Pricing = () => {
-  const scrollToForm = () => {
-    document.getElementById("signup-form")?.scrollIntoView({ behavior: "smooth" });
+  const handleWhatsAppClick = () => {
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
-    <section id="pricing" className="py-20 px-4 bg-gradient-to-b from-muted/20 via-muted/30 to-muted/20">
-      <div className="container max-w-4xl">
+    <section id="pricing" className="py-20 px-4 relative overflow-hidden">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-muted/40 to-muted/30" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-3xl" />
+      
+      <div className="container max-w-4xl relative">
         <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
@@ -82,14 +88,15 @@ const Pricing = () => {
               <Button 
                 variant="hero" 
                 size="lg" 
-                className="w-full"
-                onClick={scrollToForm}
+                className="w-full gap-2"
+                onClick={handleWhatsAppClick}
               >
-                Get my first leads free
+                <MessageCircle className="w-5 h-5" />
+                Get started on WhatsApp
               </Button>
 
               <p className="text-center text-sm text-muted-foreground mt-4">
-                Upgrade anytime after you see the quality.
+                Upgrade only if you're happy with the quality.
               </p>
             </div>
           </div>

@@ -3,6 +3,8 @@ import { MessageCircle, ExternalLink, Zap, Check, CheckCheck } from "lucide-reac
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
+const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
+
 const Hero = () => {
   const [animationPhase, setAnimationPhase] = useState<'scanning' | 'found' | 'sending' | 'delivered'>('scanning');
 
@@ -19,13 +21,17 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToForm = () => {
-    document.getElementById("signup-form")?.scrollIntoView({ behavior: "smooth" });
+  const handleWhatsAppClick = () => {
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
-    <section className="min-h-[85vh] flex items-center justify-center px-4 pt-28 pb-16 bg-gradient-to-b from-primary/[0.02] via-transparent to-transparent">
-      <div className="container max-w-6xl">
+    <section className="min-h-[90vh] flex items-center justify-center px-4 pt-32 pb-20 relative overflow-hidden">
+      {/* Subtle warm gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] via-transparent to-muted/20" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+      
+      <div className="container max-w-6xl relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
           <div className="text-center lg:text-left">
@@ -36,14 +42,14 @@ const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6"
             >
               <MessageCircle className="w-4 h-4" />
-              <span className="text-sm font-medium">Powered by WhatsApp</span>
+              <span className="text-sm font-medium">Delivered via WhatsApp</span>
             </motion.div>
             
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] mb-5"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-5"
             >
               Stop missing high-intent leads.{" "}
               <span className="text-primary">Buddy delivers them instantly.</span>
@@ -53,39 +59,36 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg sm:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-4"
+              className="text-xl sm:text-2xl text-foreground/90 max-w-lg mx-auto lg:mx-0 mb-4 font-medium"
             >
-              No ads. No cold outreach.
+              Connecting people who need a service with the businesses that provide it.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="text-base sm:text-lg text-foreground/90 max-w-lg mx-auto lg:mx-0 mb-8 font-medium"
+              className="text-base text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              <span className="text-primary">Buddy is an AI super networker</span> that scans public online conversations and surfaces high-intent opportunities in real time.
+              Buddy listens to public online conversations and surfaces high-intent opportunities in real time.
             </motion.p>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-4"
+              className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
             >
-              <Button variant="hero" size="lg" onClick={scrollToForm}>
-                Get my first leads free
+              <Button 
+                variant="hero" 
+                size="lg" 
+                onClick={handleWhatsAppClick}
+                className="gap-2"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Talk to Buddy on WhatsApp
               </Button>
             </motion.div>
-            
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-sm text-muted-foreground"
-            >
-              No spam. No credit card. Cancel anytime.
-            </motion.p>
           </div>
 
           {/* Right side - WhatsApp Lead Preview Card */}
@@ -98,7 +101,7 @@ const Hero = () => {
             {/* Phone frame effect */}
             <div className="relative mx-auto max-w-sm lg:max-w-md">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75" />
+              <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full scale-75" />
               
               {/* WhatsApp-style card */}
               <div className="relative bg-card rounded-2xl shadow-card border border-border/50 overflow-hidden">
@@ -110,13 +113,13 @@ const Hero = () => {
                   <div>
                     <p className="text-primary-foreground font-semibold">Buddy</p>
                     <p className="text-primary-foreground/70 text-xs">
-                      {animationPhase === 'scanning' ? 'scanning...' : 'online'}
+                      {animationPhase === 'scanning' ? 'listening...' : 'online'}
                     </p>
                   </div>
                 </div>
 
                 {/* Chat area */}
-                <div className="p-4 bg-[#e5ddd5] dark:bg-muted/50 min-h-[280px] space-y-3">
+                <div className="p-4 bg-[#faf8f5] dark:bg-muted/50 min-h-[280px] space-y-3">
                   {/* Scanning state */}
                   <AnimatePresence mode="wait">
                     {animationPhase === 'scanning' && (
@@ -145,7 +148,7 @@ const Hero = () => {
                               className="w-2 h-2 bg-primary/60 rounded-full" 
                             />
                           </div>
-                          <p className="text-sm text-muted-foreground">Scanning conversations...</p>
+                          <p className="text-sm text-muted-foreground">Listening to conversations...</p>
                         </div>
                       </motion.div>
                     )}

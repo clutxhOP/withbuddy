@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ExternalLink, Zap, Check, CheckCheck } from "lucide-react";
+import { MessageCircle, ExternalLink, Check, CheckCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -178,9 +178,9 @@ const Hero = () => {
                                  style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
                             
                             <div className="flex items-center justify-between gap-2 mb-2">
-                              <span className="text-xs font-semibold text-whatsapp">🔥 New Lead</span>
+                              <span className="text-xs font-semibold text-primary">🔥 High intent</span>
                               <div className="flex items-center gap-1">
-                                <span className="text-[10px] text-muted-foreground">2:34 PM</span>
+                                <span className="text-[10px] text-muted-foreground">now</span>
                                 {/* Delivery status */}
                                 <AnimatePresence mode="wait">
                                   {animationPhase === 'sending' && (
@@ -211,21 +211,11 @@ const Hero = () => {
                               Looking for a web designer for my restaurant
                             </p>
                             
-                            <p className="text-xs text-muted-foreground mb-2 leading-relaxed">
-                              "We desperately need a new website. Budget is around $2-3k. Any recommendations?"
+                            <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+                              We desperately need a new website. Our current one looks like it's fro...
                             </p>
                             
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <span className="inline-flex items-center gap-1 text-[10px] bg-whatsapp/10 text-whatsapp px-2 py-0.5 rounded-full font-medium">
-                                <Zap className="w-2.5 h-2.5" />
-                                High intent
-                              </span>
-                              <span className="text-[10px] text-muted-foreground">
-                                Found online
-                              </span>
-                            </div>
-                            
-                            <a href="#" className="inline-flex items-center gap-1 text-[10px] text-whatsapp hover:underline mt-2 font-medium">
+                            <a href="#" className="inline-flex items-center gap-1 text-[11px] text-primary hover:underline font-medium">
                               View post <ExternalLink className="w-2.5 h-2.5" />
                             </a>
                           </div>

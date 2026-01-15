@@ -273,6 +273,29 @@ const Hero = () => {
                       )}
                     </AnimatePresence>
 
+                    {/* User reply - appears after delivery */}
+                    <AnimatePresence>
+                      {animationPhase === 'delivered' && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          transition={{ delay: 0.5, duration: 0.3 }}
+                          className="flex justify-end"
+                        >
+                          <div className="bg-[#dcf8c6] dark:bg-[#005c4b] rounded-lg rounded-tr-sm p-2.5 shadow-sm max-w-[75%] relative">
+                            {/* Message tail - right side */}
+                            <div className="absolute -right-2 top-0 w-3 h-3 bg-[#dcf8c6] dark:bg-[#005c4b]" 
+                                 style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }} />
+                            <p className="text-sm text-foreground">Thanks Buddy! 🙌</p>
+                            <div className="flex items-center justify-end gap-1 mt-1">
+                              <span className="text-[10px] text-muted-foreground">now</span>
+                              <CheckCheck className="w-3 h-3 text-[#53bdeb]" />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
                     {/* Status text */}
                     <motion.div
                       initial={{ opacity: 0 }}

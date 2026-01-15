@@ -6,20 +6,20 @@ const steps = [
   {
     icon: Radio,
     title: "Listen",
-    description: "Buddy scans public conversations across the internet in real time.",
-    benefit: "Never miss a potential customer again.",
+    description: "Buddy monitors public conversations across the internet in real time.",
+    benefit: "Never miss the right moment again.",
   },
   {
     icon: Filter,
     title: "Qualify",
-    description: "Filters for genuine buying intent, not just keywords.",
-    benefit: "Only get leads that are ready to buy.",
+    description: "Filters for genuine intent, not just keywords.",
+    benefit: "Only relevant opportunities reach you.",
   },
   {
     icon: Send,
     title: "Deliver",
-    description: "Sends the lead instantly to WhatsApp with context.",
-    benefit: "Respond while the intent is still hot.",
+    description: "Sends the opportunity instantly to WhatsApp with context.",
+    benefit: "Respond while the moment is still warm.",
   },
 ];
 

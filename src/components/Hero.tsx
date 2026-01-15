@@ -20,7 +20,7 @@ const useCurrentTime = () => {
   return time;
 };
 
-const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
+const WHATSAPP_LINK = "https://wa.me/971547399726";
 
 const Hero = () => {
   const currentTime = useCurrentTime();
@@ -69,8 +69,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-5"
             >
-              Stop missing high-intent leads.{" "}
-              <span className="text-primary">Buddy delivers them instantly.</span>
+              Stop missing the right moments.{" "}
+              <span className="text-primary">Buddy connects you instantly.</span>
             </motion.h1>
             
             <motion.p
@@ -280,7 +280,7 @@ const Hero = () => {
                       className="flex items-center gap-1 text-xs text-muted-foreground ml-2"
                     >
                       {animationPhase === 'found' && (
-                        <span className="text-whatsapp font-medium">Lead found! Sending to WhatsApp...</span>
+                        <span className="text-whatsapp font-medium">Match found! Sending to WhatsApp...</span>
                       )}
                       {animationPhase === 'sending' && (
                         <span>Delivering...</span>

@@ -5,28 +5,28 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
-const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
+const WHATSAPP_LINK = "https://wa.me/971547399726";
 
 const faqs = [
   {
     question: "What is Buddy?",
-    answer: "Buddy is a super connector that finds real people online who are actively looking for help related to your business. It connects businesses with people actively looking for their service."
+    answer: "Buddy is an AI super networker. It connects businesses with people actively looking for their service."
   },
   {
     question: "How does it work?",
-    answer: "Buddy listens to public online conversations in real time. When someone asks for something relevant to you, Buddy sends it to you via WhatsApp."
+    answer: "Buddy listens to public online conversations and surfaces high-intent opportunities in real time. When someone asks for something relevant to you, Buddy sends it to you via WhatsApp."
   },
   {
-    question: "Where do the leads come from?",
+    question: "Where do the opportunities come from?",
     answer: "From real discussions happening publicly across the internet. These are not lists or scraped databases — they're actual people expressing genuine needs."
   },
   {
-    question: "Are these cold leads?",
-    answer: "No. The people Buddy finds are already expressing intent or a need. They're warm opportunities waiting to be connected."
+    question: "Are these cold contacts?",
+    answer: "No. The people Buddy finds are already expressing intent or a need. They're warm opportunities waiting for the right connection."
   },
   {
     question: "Does Buddy message people for me?",
-    answer: "No. Buddy only surfaces opportunities. You decide if and how to respond. Human judgment stays in control."
+    answer: "No. Buddy never auto-messages anyone. It only surfaces opportunities. You decide if and how to respond. Human judgment stays in control."
   },
   {
     question: "Who is Buddy for?",
@@ -41,8 +41,8 @@ const faqs = [
     answer: "Buddy starts listening immediately after setup. Timing depends on how active your niche is online."
   },
   {
-    question: "What if the leads are not a good fit?",
-    answer: "Your feedback helps Buddy get more precise over time. Unqualified leads are replaced for free."
+    question: "What if the opportunities are not a good fit?",
+    answer: "Your feedback helps Buddy get more precise over time. Irrelevant opportunities are replaced for free."
   },
   {
     question: "Is Buddy fully automated?",
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: "Is Buddy spammy?",
-    answer: "No. Buddy does not send mass messages or automated outreach. It surfaces opportunities — it never interrupts buyers."
+    answer: "No. Buddy never sends mass messages, never scrapes emails, and never interrupts buyers with ads. It surfaces opportunities — you decide how to respond."
   },
   {
     question: "Can I try it first?",

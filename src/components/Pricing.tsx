@@ -3,7 +3,7 @@ import { Check, Shield, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
-const WHATSAPP_LINK = "https://wa.me/message/YOUR_BUDDY_NUMBER"; // Replace with actual WhatsApp link
+const WHATSAPP_LINK = "https://wa.me/971547399726";
 
 const Pricing = () => {
   const handleWhatsAppClick = () => {
@@ -56,7 +56,7 @@ const Pricing = () => {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Up to <strong>40 qualified leads</strong> per month</span>
+                  <span className="text-foreground">Up to <strong>40 qualified opportunities</strong> per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
@@ -64,7 +64,7 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-whatsapp mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Real-time high-intent signals</span>
+                  <span className="text-foreground">Real-time high-intent conversations</span>
                 </li>
               </ul>
 
@@ -75,10 +75,10 @@ const Pricing = () => {
                   <div>
                     <p className="font-medium text-foreground text-sm">Quality Guarantee</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      If a lead is not qualified, we replace it for free.
+                      If an opportunity is not relevant, we replace it for free.
                     </p>
                     <p className="text-xs text-muted-foreground/80 mt-2">
-                      Qualified means it matches your niche and location.
+                      Relevant means it matches your niche and location.
                     </p>
                   </div>
                 </div>

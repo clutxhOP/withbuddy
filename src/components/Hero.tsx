@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ExternalLink, Check, CheckCheck } from "lucide-react";
+import { MessageCircle, ExternalLink, Check, CheckCheck, Smile, Paperclip, Camera, Mic } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -259,8 +259,21 @@ const Hero = () => {
                     </motion.div>
                   </div>
                   
-                  {/* Bottom safe area */}
-                  <div className="h-8 bg-[#ece5dd] dark:bg-[#0b141a]" />
+                  {/* WhatsApp input bar */}
+                  <div className="px-2 py-2 bg-[#f0f0f0] dark:bg-[#1f2c34] flex items-center gap-2">
+                    <div className="flex-1 flex items-center gap-2 bg-white dark:bg-[#2a3942] rounded-full px-3 py-2">
+                      <Smile className="w-5 h-5 text-[#8696a0]" />
+                      <span className="flex-1 text-sm text-[#8696a0]">Message</span>
+                      <Paperclip className="w-5 h-5 text-[#8696a0]" />
+                      <Camera className="w-5 h-5 text-[#8696a0]" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-whatsapp flex items-center justify-center">
+                      <Mic className="w-5 h-5 text-white" />
+                    </div>
+                  </div>
+                  
+                  {/* Bottom safe area with home indicator background */}
+                  <div className="h-6 bg-[#f0f0f0] dark:bg-[#1f2c34]" />
                 </div>
                 
                 {/* Home indicator */}

@@ -273,6 +273,23 @@ const Hero = () => {
                       )}
                     </AnimatePresence>
 
+                    {/* Status text */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="flex items-center gap-1 text-xs text-muted-foreground ml-2"
+                    >
+                      {animationPhase === 'found' && (
+                        <span className="text-whatsapp font-medium">Lead found! Sending to WhatsApp...</span>
+                      )}
+                      {animationPhase === 'sending' && (
+                        <span>Delivering...</span>
+                      )}
+                      {animationPhase === 'delivered' && (
+                        <span className="text-whatsapp font-medium">✓ Delivered to your WhatsApp</span>
+                      )}
+                    </motion.div>
+
                     {/* User reply - appears after delivery */}
                     <AnimatePresence>
                       {animationPhase === 'delivered' && (
@@ -295,23 +312,6 @@ const Hero = () => {
                         </motion.div>
                       )}
                     </AnimatePresence>
-
-                    {/* Status text */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="flex items-center gap-1 text-xs text-muted-foreground ml-2"
-                    >
-                      {animationPhase === 'found' && (
-                        <span className="text-whatsapp font-medium">Lead found! Sending to WhatsApp...</span>
-                      )}
-                      {animationPhase === 'sending' && (
-                        <span>Delivering...</span>
-                      )}
-                      {animationPhase === 'delivered' && (
-                        <span className="text-whatsapp font-medium">✓ Delivered to your WhatsApp</span>
-                      )}
-                    </motion.div>
                   </div>
                   
                   {/* WhatsApp input bar */}

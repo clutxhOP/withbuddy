@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import SignupForm from "@/components/SignupForm";
 import Storyboard from "@/components/Storyboard";
 import HowItWorks from "@/components/HowItWorks";
 import WhatYouReceive from "@/components/WhatYouReceive";
@@ -15,7 +14,6 @@ const Index = () => {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <SignupForm />
       <Storyboard />
       <HowItWorks />
       <WhatYouReceive />

@@ -1,25 +1,27 @@
-import { Radio, Filter, Send } from "lucide-react";
+import { Briefcase, Radio, MessageCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const steps = [
   {
+    icon: Briefcase,
+    title: "Buddy learns your business",
+    description: "Buddy understands what you do, who you help, and what kind of requests matter to you.",
+  },
+  {
     icon: Radio,
-    title: "Listen",
-    description: "Buddy monitors public conversations across the internet in real time.",
-    benefit: "Never miss the right moment again.",
+    title: "Buddy listens across the network",
+    description: "Buddy listens to public online conversations in real time, where people naturally ask for help, recommendations, or solutions.",
   },
   {
-    icon: Filter,
-    title: "Qualify",
-    description: "Filters for genuine intent, not just keywords.",
-    benefit: "Only relevant opportunities reach you.",
+    icon: MessageCircle,
+    title: "A real need appears",
+    description: "Someone asks for exactly what you offer. A problem is described. A recommendation is requested.",
   },
   {
-    icon: Send,
-    title: "Deliver",
-    description: "Sends the opportunity instantly to WhatsApp with context.",
-    benefit: "Respond while the moment is still warm.",
+    icon: ArrowRight,
+    title: "Buddy connects you",
+    description: "Buddy brings the conversation to you so you can step in naturally and decide how to respond.",
   },
 ];
 
@@ -45,11 +47,11 @@ const cardVariants = {
 const HowItWorks = () => {
   return (
     <section className="py-16 px-4">
-      <div className="container max-w-5xl">
+      <div className="container max-w-6xl">
         <AnimatedSection className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">How Buddy works</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            From conversation to conversion in three simple steps.
+            From conversation to connection in four simple steps.
           </p>
         </AnimatedSection>
         
@@ -58,7 +60,7 @@ const HowItWorks = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid sm:grid-cols-3 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -83,8 +85,7 @@ const HowItWorks = () => {
               </motion.div>
               
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-muted-foreground mb-3 leading-relaxed">{step.description}</p>
-              <p className="text-sm text-primary font-medium">{step.benefit}</p>
+              <p className="text-muted-foreground leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
         </motion.div>

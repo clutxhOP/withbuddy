@@ -53,6 +53,12 @@ const Footer = () => {
           <Link to="/tc" className="text-muted-foreground hover:text-foreground transition-colors">
             Terms
           </Link>
+          <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+            Privacy
+          </Link>
+          <Link to="/refund" className="text-muted-foreground hover:text-foreground transition-colors">
+            Refund Policy
+          </Link>
         </div>
 
         {/* Brand line */}

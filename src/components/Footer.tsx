@@ -50,6 +50,9 @@ const Footer = () => {
           <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
             About
           </Link>
+          <Link to="/tc" className="text-muted-foreground hover:text-foreground transition-colors">
+            Terms
+          </Link>
         </div>
 
         {/* Brand line */}
